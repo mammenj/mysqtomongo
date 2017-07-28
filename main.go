@@ -56,7 +56,6 @@ func main() {
 	for i := 0; i < numofUsers; i++ {
 		docs[i] = users[i]
 	}
-
 	mgoClient, err := mongodb.NewMongoClient(mgoHost, mgoDB, mgoCollection)
 	if err != nil {
 		log.Fatalf("Error getting connection to Mongodb %v", err)
@@ -66,13 +65,9 @@ func main() {
 	if cerr != nil {
 		log.Printf("Error creating Users %v", cerr)
 	}
-
 	writelapsed := time.Since(writestart)
 	log.Printf("Inserted %d users ", numofUsers)
 	log.Printf("::::: Time taken to write to MongoDB for %d users %s\n", numofUsers, writelapsed)
-
-	//}
-
 	elapsed := time.Since(start)
 	log.Printf("::::: Total time taken to read from MySQL and write %d users %s\n", numofUsers, elapsed)
 
