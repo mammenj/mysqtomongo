@@ -1,2 +1,2 @@
 # mysqtomongo
-Projec to read data from Mysql and insert to Mongodb
+Project to read data from Mysql and insert to Mongodb
